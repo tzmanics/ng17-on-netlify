@@ -1,3 +1,4 @@
+import { Component, PLATFORM_ID, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
 
@@ -16,6 +17,7 @@ export class AppComponent {
     { short:"/coffee", url:"https://foro.mk/coffee" },
   ]
   currentRoute: string | undefined;
+  platformId = inject(PLATFORM_ID);
 
   constructor(private router: Router) {
     // console.log(this.router.url);
