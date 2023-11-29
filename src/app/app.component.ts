@@ -1,4 +1,5 @@
 import { Component, PLATFORM_ID, inject } from '@angular/core';
+import { CommonModule, isPlatformServer } from '@angular/common';
 import { NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
 
@@ -32,6 +33,12 @@ export class AppComponent {
             this.goToPage(map.url);
         }
       });
+    isPlatformServer(this.platformId)
+    {
+
+    }
+    console.log(this.platformId);
+
   }
 
   goToLink(url: string) {
