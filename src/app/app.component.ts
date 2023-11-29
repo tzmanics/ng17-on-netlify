@@ -1,5 +1,3 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
 
@@ -23,15 +21,15 @@ export class AppComponent {
     // console.log(this.router.url);
     // console.log(route.queryParamMap.get('url'));
     router.events//.filter(event => event instanceof NavigationEnd)
-          .subscribe(event  =>
-          {
-            if (event instanceof NavigationEnd)
-            {
-              var map = this.list.find(a=>a.short == event.url)
-              if (map?.url)
-                this.goToPage(map.url);
-            }
-          });
+      .subscribe(event  =>
+      {
+        if (event instanceof NavigationEnd)
+        {
+          var map = this.list.find(a=>a.short == event.url)
+          if (map?.url)
+            this.goToPage(map.url);
+        }
+      });
   }
 
   goToLink(url: string) {
